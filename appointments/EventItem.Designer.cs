@@ -1,33 +1,25 @@
-﻿namespace Calendar
+namespace Calendar
 {
-    partial class EventItem
-    {
-        /// <summary> 
-        /// Required designer variable.
-        /// </summary>
-        private System.ComponentModel.IContainer components = null;
+     partial class EventItem
+     {
+          private System.ComponentModel.IContainer components = null;
+          private System.Windows.Forms.Label location;
+          private System.Windows.Forms.Label title;
+          private System.Windows.Forms.Panel panel1;
+          private System.Windows.Forms.Label time;
+          private System.Windows.Forms.Panel brightPanel;
 
-        /// <summary> 
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
-                components.Dispose();
-            }
-            base.Dispose(disposing);
-        }
+          protected override void Dispose(bool disposing)
+          {
+               if (disposing && (components != null))
+               {
+                    components.Dispose();
+               }
+               base.Dispose(disposing);
+          }
 
-        #region Component Designer generated code
-
-        /// <summary> 
-        /// Required method for Designer support - do not modify 
-        /// the contents of this method with the code editor.
-        /// </summary>
-        private void InitializeComponent()
-        {
+          private void InitializeComponent()
+          {
                this.location = new System.Windows.Forms.Label();
                this.title = new System.Windows.Forms.Label();
                this.panel1 = new System.Windows.Forms.Panel();
@@ -36,9 +28,8 @@
                this.panel1.SuspendLayout();
                this.brightPanel.SuspendLayout();
                this.SuspendLayout();
-               // 
+
                // location
-               // 
                this.location.AutoSize = true;
                this.location.Font = new System.Drawing.Font("Bahnschrift", 7.25F);
                this.location.ForeColor = System.Drawing.Color.White;
@@ -48,11 +39,10 @@
                this.location.Name = "location";
                this.location.Size = new System.Drawing.Size(95, 18);
                this.location.TabIndex = 13;
-               this.location.Text = "28 May, Baku";
+               this.location.Text = "10 may, UNT";
                this.location.Click += new System.EventHandler(this.location_Click);
-               // 
+
                // title
-               // 
                this.title.AutoSize = true;
                this.title.Font = new System.Drawing.Font("Bahnschrift", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
                this.title.ForeColor = System.Drawing.Color.White;
@@ -64,9 +54,8 @@
                this.title.TabIndex = 12;
                this.title.Text = "Meeting with investors";
                this.title.Click += new System.EventHandler(this.title_Click);
-               // 
+
                // panel1
-               // 
                this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(42)))), ((int)(((byte)(58)))));
                this.panel1.Controls.Add(this.time);
                this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
@@ -75,9 +64,8 @@
                this.panel1.Name = "panel1";
                this.panel1.Size = new System.Drawing.Size(76, 95);
                this.panel1.TabIndex = 14;
-               // 
+
                // time
-               // 
                this.time.Dock = System.Windows.Forms.DockStyle.Top;
                this.time.Font = new System.Drawing.Font("Bahnschrift SemiLight", 9.25F);
                this.time.ForeColor = System.Drawing.Color.White;
@@ -88,9 +76,8 @@
                this.time.Size = new System.Drawing.Size(76, 38);
                this.time.TabIndex = 13;
                this.time.Text = "12:00 AM";
-               // 
+
                // brightPanel
-               // 
                this.brightPanel.Controls.Add(this.title);
                this.brightPanel.Dock = System.Windows.Forms.DockStyle.Right;
                this.brightPanel.Location = new System.Drawing.Point(74, 0);
@@ -99,9 +86,8 @@
                this.brightPanel.Size = new System.Drawing.Size(328, 95);
                this.brightPanel.TabIndex = 15;
                this.brightPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.brightPanel_Paint);
-               // 
+
                // EventItem
-               // 
                this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
                this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
                this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(63)))), ((int)(((byte)(86)))));
@@ -116,18 +102,6 @@
                this.brightPanel.PerformLayout();
                this.ResumeLayout(false);
                this.PerformLayout();
-
-        }
-
-        #endregion
-
-        private System.Windows.Forms.Label location;
-        private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel brightPanel;
-        private System.Windows.Forms.Label time;
-
-
-
-    }
+          }
+     }
 }
