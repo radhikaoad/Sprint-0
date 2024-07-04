@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -10,88 +10,79 @@ using System.Windows.Forms;
 
 namespace Calendar
 {
-    public partial class CalndarGridItem : UserControl
-    {
-        DateTime date;
+     public partial class CalndarGridItem : UserControl
+     {
+          private DateTime date;
 
-        public CalndarGridItem()
-        {
-            InitializeComponent();
-        }
+          public CalndarGridItem()
+          {
+               InitializeComponent();
+          }
 
-        private void backImage_Click(object sender, EventArgs e)
-        {
+          private void backImage_Click(object sender, EventArgs e)
+          {
+               // Handle the backImage click event
+          }
 
-        }
+          public void setText(string txt)
+          {
+               text.Text = txt;
+          }
 
-        public void setText(String txt)
-        {
-            text.Text = txt;
-        }
+          public void setDateTime(DateTime dt)
+          {
+               date = new DateTime(dt.Year, dt.Month, int.Parse(text.Text));
+          }
 
-        public void setDateTime(DateTime dt)
-        {
-            date = new DateTime(dt.Year, dt.Month, int.Parse(text.Text.ToString()));
+          public DateTime getDateTime()
+          {
+               return date;
+          }
 
+          public void makeToDay()
+          {
+               text.Image = Calendar.Properties.Resources.circle;
+               bottomLine.Visible = false;
+          }
 
-        }
+          public void setTextColor(Color color)
+          {
+               text.ForeColor = color;
+          }
 
-        public DateTime getDateTime()
-        {
+          public void hasNote()
+          {
+               bottomLine.BackColor = Color.FromArgb(255, 0, 117);
+          }
 
-            return date;
-        }
+          public void hadNote()
+          {
+               bottomLine.BackColor = Color.FromArgb(65, 84, 93);
+          }
 
-        public void makeToDay()
-        {
-            text.Image = Calendar.Properties.Resources.circle;
-            bottomLine.Visible = false;
-        }
+          public bool daysAreEqual(DateTime dt)
+          {
+               return dt.Year == date.Year && dt.Month == date.Month && dt.Day == date.Day;
+          }
 
-        public void setTextColor(Color color)
-        {
-            text.ForeColor = color;
-        }
+          public string getDateString()
+          {
+               return $"{date.Day} {date.ToString("MMMM").Substring(0, 3)} {date.Year}";
+          }
 
-        public void hasNote()
-        {
-            bottomLine.BackColor = Color.FromArgb(255, 0, 117);
-        }
+          private void text_Click(object sender, EventArgs e)
+          {
+               // Handle the text click event
+          }
 
-        public void hadNote()
-        {
-            bottomLine.BackColor = Color.FromArgb(65, 84, 93);
-        }
+          public Label getTextView()
+          {
+               return text;
+          }
 
-        public Boolean daysAreEqual(DateTime dt)
-        {
-            if (dt.Year == date.Year && dt.Month == date.Month && dt.Day == date.Month)
-
-                return true;
-
-            else
-                return false;
-
-        }
-
-        public String getDateString()
-        {
-            return date.Day + " " + date.ToString("MMMM").Substring(0, 3) + " " + date.Year;
-        }
-
-        private void text_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public Label getTextView()
-        {
-            return text;
-        }
-
-        public void setOnGridItemClickListener(EventHandler handler)
-        {
-            this.text.Click += handler;
-        }
-    }
+          public void setOnGridItemClickListener(EventHandler handler)
+          {
+               this.text.Click += handler;
+          }
+     }
 }
