@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Calendar
 {
-     public partial class CalndarGridItem : UserControl
+     public partial class CalndarGridItem : UserControl 
      {
           private DateTime date;
 
