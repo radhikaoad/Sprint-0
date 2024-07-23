@@ -7,7 +7,7 @@ namespace Calendar
      {
           public Form4()
           {
-               InitializeComponent();
+               InitializeComponent(); 
           }
 
           private void buttonContinue_Click(object sender, EventArgs e)
