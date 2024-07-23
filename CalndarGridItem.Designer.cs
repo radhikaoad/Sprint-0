@@ -27,7 +27,7 @@ namespace Calendar
                this.backImage.Dock = System.Windows.Forms.DockStyle.Fill;
                this.backImage.Image = global::Calendar.Properties.Resources.circle;
                this.backImage.Location = new System.Drawing.Point(0, 0);
-               this.backImage.Margin = new System.Windows.Forms.Padding(15);
+               this.backImage.Margin = new System.Windows.Forms.Padding(15); 
                this.backImage.Name = "backImage";
                this.backImage.Padding = new System.Windows.Forms.Padding(5);
                this.backImage.Size = new System.Drawing.Size(50, 50);
