@@ -13,7 +13,7 @@ namespace Calendar
     {
         public RoundPic()
         {
-            this.BackColor = Color.DarkGray;
+            this.BackColor = Color.DarkGray; 
         }
 
         protected override void OnPaint(PaintEventArgs e)
