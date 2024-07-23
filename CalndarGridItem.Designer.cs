@@ -4,7 +4,7 @@ namespace Calendar
      {
           private System.ComponentModel.IContainer components = null;
 
-          protected override void Dispose(bool disposing)
+          protected override void Dispose(bool disposing) avoid
           {
                if (disposing && (components != null))
                {
