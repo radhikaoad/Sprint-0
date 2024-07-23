@@ -9,7 +9,7 @@ namespace Calendar
           private System.Windows.Forms.Label time;
           private System.Windows.Forms.Panel brightPanel;
 
-          protected override void Dispose(bool disposing)
+          protected override void Dispose(bool disposing) 
           {
                if (disposing && (components != null))
                {
