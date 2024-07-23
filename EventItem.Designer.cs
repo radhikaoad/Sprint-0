@@ -29,7 +29,7 @@ namespace Calendar
                this.brightPanel.SuspendLayout();
                this.SuspendLayout();
 
-               // location
+               // location 
                this.location.AutoSize = true;
                this.location.Font = new System.Drawing.Font("Bahnschrift", 7.25F);
                this.location.ForeColor = System.Drawing.Color.White;
