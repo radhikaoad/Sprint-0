@@ -1,78 +1,111 @@
+using System;
+using System.ComponentModel;
+using System.Drawing;
+using System.Windows.Forms;
+
 namespace Calendar
 {
-     public partial class CalndarGridItem
-     {
-          private System.ComponentModel.IContainer components = null;
+    public partial class CalendarGridItem : UserControl
+    {
+        private IContainer components = null;
 
-          protected override void Dispose(bool disposing)
-          {
-               if (disposing && (components != null))
-               {
-                    components.Dispose();
-               }
-               base.Dispose(disposing);
-          }
+        public CalendarGridItem()
+        {
+            InitializeComponent();
+        }
 
-          #region Component Designer generated code
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
-          private void InitializeComponent()
-          {
-               this.backImage = new System.Windows.Forms.PictureBox();
-               this.text = new System.Windows.Forms.Label();
-               this.bottomLine = new System.Windows.Forms.Panel();
-               ((System.ComponentModel.ISupportInitialize)(this.backImage)).BeginInit();
-               this.SuspendLayout();
+        #region Component Designer generated code
 
-               // backImage
-               this.backImage.Dock = System.Windows.Forms.DockStyle.Fill;
-               this.backImage.Image = global::Calendar.Properties.Resources.circle;
-               this.backImage.Location = new System.Drawing.Point(0, 0);
-               this.backImage.Margin = new System.Windows.Forms.Padding(15); 
-               this.backImage.Name = "backImage";
-               this.backImage.Padding = new System.Windows.Forms.Padding(5);
-               this.backImage.Size = new System.Drawing.Size(50, 50);
-               this.backImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-               this.backImage.TabIndex = 1;
-               this.backImage.TabStop = false;
-               this.backImage.Visible = false;
-               this.backImage.Click += new System.EventHandler(this.backImage_Click);
+        private void InitializeComponent()
+        {
+            this.backImage = new PictureBox();
+            this.text = new Label();
+            this.bottomLine = new Panel();
+            ((ISupportInitialize)(this.backImage)).BeginInit();
+            this.SuspendLayout();
 
-               // text
-               this.text.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(28)))), ((int)(((byte)(35)))));
-               this.text.Cursor = System.Windows.Forms.Cursors.Default;
-               this.text.Dock = System.Windows.Forms.DockStyle.Fill;
-               this.text.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-               this.text.ForeColor = System.Drawing.Color.White;
-               this.text.Location = new System.Drawing.Point(0, 0);
-               this.text.Name = "text";
-               this.text.Size = new System.Drawing.Size(50, 50);
-               this.text.TabIndex = 2;
-               this.text.Text = "12";
-               this.text.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-               this.text.Click += new System.EventHandler(this.text_Click);
+            // backImage
+            this.backImage.Dock = DockStyle.Fill;
+            this.backImage.Image = global::Calendar.Properties.Resources.circle;
+            this.backImage.Location = new Point(0, 0);
+            this.backImage.Margin = new Padding(15);
+            this.backImage.Name = "backImage";
+            this.backImage.Padding = new Padding(5);
+            this.backImage.Size = new Size(50, 50);
+            this.backImage.SizeMode = PictureBoxSizeMode.StretchImage;
+            this.backImage.TabIndex = 1;
+            this.backImage.TabStop = false;
+            this.backImage.Visible = false;
+            this.backImage.Click += new EventHandler(this.backImage_Click);
 
-               // bottomLine
-               this.bottomLine.Location = new System.Drawing.Point(15, 37);
-               this.bottomLine.Name = "bottomLine";
-               this.bottomLine.Size = new System.Drawing.Size(20, 3);
-               this.bottomLine.TabIndex = 3;
+            // text
+            this.text.BackColor = Color.FromArgb(26, 28, 35);
+            this.text.Cursor = Cursors.Default;
+            this.text.Dock = DockStyle.Fill;
+            this.text.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point, ((byte)(0)));
+            this.text.ForeColor = Color.White;
+            this.text.Location = new Point(0, 0);
+            this.text.Name = "text";
+            this.text.Size = new Size(50, 50);
+            this.text.TabIndex = 2;
+            this.text.Text = "12";
+            this.text.TextAlign = ContentAlignment.MiddleCenter;
+            this.text.Click += new EventHandler(this.text_Click);
 
-               // CalndarGridItem
-               this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-               this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-               this.Controls.Add(this.bottomLine);
-               this.Controls.Add(this.text);
-               this.Controls.Add(this.backImage);
-               this.Name = "CalndarGridItem";
-               this.Size = new System.Drawing.Size(50, 50);
-               ((System.ComponentModel.ISupportInitialize)(this.backImage)).EndInit();
-               this.ResumeLayout(false);
-          }
+            // bottomLine
+            this.bottomLine.BackColor = Color.Gray;
+            this.bottomLine.Location = new Point(15, 37);
+            this.bottomLine.Name = "bottomLine";
+            this.bottomLine.Size = new Size(20, 3);
+            this.bottomLine.TabIndex = 3;
 
-          #endregion
+            // CalendarGridItem
+            this.AutoScaleDimensions = new SizeF(6F, 13F);
+            this.AutoScaleMode = AutoScaleMode.Font;
+            this.Controls.Add(this.bottomLine);
+            this.Controls.Add(this.text);
+            this.Controls.Add(this.backImage);
+            this.Name = "CalendarGridItem";
+            this.Size = new Size(50, 50);
+            this.MouseEnter += new EventHandler(this.CalendarGridItem_MouseEnter);
+            this.MouseLeave += new EventHandler(this.CalendarGridItem_MouseLeave);
+            ((ISupportInitialize)(this.backImage)).EndInit();
+            this.ResumeLayout(false);
+        }
 
-          private System.Windows.Forms.PictureBox backImage;
-          private System.Windows.Forms.Label text;
-          private System.Windows.Forms.Panel bottomLine;
-     }
+        #endregion
+
+        private PictureBox backImage;
+        private Label text;
+        private Panel bottomLine;
+
+        private void backImage_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Image clicked");
+        }
+
+        private void text_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Text clicked");
+        }
+
+        private void CalendarGridItem_MouseEnter(object sender, EventArgs e)
+        {
+            this.text.BackColor = Color.DarkGray;
+        }
+
+        private void CalendarGridItem_MouseLeave(object sender, EventArgs e)
+        {
+            this.text.BackColor = Color.FromArgb(26, 28, 35);
+        }
+    }
 }
